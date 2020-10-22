@@ -2,18 +2,16 @@ import React, {useState, useEffect}  from "react";
 import MovieHeader from "../components/headerMovie";
 import MovieDetails from "../components/movieDetails";
 import "./moviePage.css";
+import {getMovie} from '../api/tmdb-api';
 
 const MoviePage = props => {
   const { id } = props.match.params
   const [movie, setMovie] = useState(null)
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=1426f12d2f5a0a08718de4488213cec8`
-    ).then(res => res.json())    
-    .then(movie => {
+    getMovie(id).then(movie => {
       setMovie(movie);
-    })
-  }, [id])
+    });
+  }, [id]);
 
   return (
     <>
