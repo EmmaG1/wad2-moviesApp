@@ -21,3 +21,11 @@ export const getMovies = () => {
       .then(res => res.json())
       .then(json => json.genres);
   };
+
+  export const getMovieReviews = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=1426f12d2f5a0a08718de4488213cec8`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
