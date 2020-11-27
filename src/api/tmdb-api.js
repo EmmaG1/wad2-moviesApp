@@ -14,9 +14,7 @@ export const getMovies = () => {
   
   export const getGenres = () => {
     return fetch(
-      "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
-        "1426f12d2f5a0a08718de4488213cec8" +
-        "&language=en-US"
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=1426f12d2f5a0a08718de4488213cec8&language=en-US"
     )
       .then(res => res.json())
       .then(json => json.genres);
