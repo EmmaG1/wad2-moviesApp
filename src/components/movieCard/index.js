@@ -4,7 +4,7 @@ import "./movieCard.css";
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MovieCard = ({movie, action}) => {
+const MovieCard = ({movie, action}) => { //design to print to the screen
 
   return (
     <div className="col-sm-3">

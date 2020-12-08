@@ -6,8 +6,8 @@ import { getUpcomingMovies } from "../api/tmdb-api";
 const MovieListPage = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    getUpcomingMovies().then(movies => {
-      setMovies(movies);
+    getUpcomingMovies().then(movies => { //finds the moviesd 
+      setMovies(movies); //stores the movies
     });
   }, []);
 
@@ -22,9 +22,9 @@ const MovieListPage = () => {
   };
 
   return (
-      <PageTemplate
+      <PageTemplate //used to build page
         title='Upcoming Movies'
-        movies={movies}
+        movies={movies} //passing the array list 
         buttonHandler={addToFavorites}
       />
   );
