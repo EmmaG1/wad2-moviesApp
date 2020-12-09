@@ -35,3 +35,12 @@ export const getMovies = () => {
       .then(res => res.json())
       .then(json => json.results); //returning the movies 
   };
+
+  export const getCredits = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=1426f12d2f5a0a08718de4488213cec8&language=en-US&page=1&language=en-US`
+  
+    )
+      .then(res => res.json())
+      .then(json => json.cast);
+  };
