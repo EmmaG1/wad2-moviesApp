@@ -1,6 +1,6 @@
 import React, { useEffect, createContext, useReducer } from "react";
 //removed getCredits from below
-import { getMovies, getUpcomingMovies, getTopRated } from "../api/tmdb-api";
+import { getMovies, getUpcomingMovies, getTopRated, getNowPlaying } from "../api/tmdb-api";
 
 export const MoviesContext = createContext(null);
 
@@ -15,6 +15,10 @@ const reducer = (state, action) => {
         toprated: state.toprated.map((t) =>
          t.id === action.payload.movie.id ? { ...t, favorite: true } : t
         ),
+
+        nowplaying: state.nowplaying.map((n) =>
+          n.id === action.payload.movie.id ? { ...n, favorite: true } : n
+        ),
         //..........................
         upcoming: [...state.upcoming],
       };
@@ -25,16 +29,20 @@ const reducer = (state, action) => {
           ),
           //added 11/12 dont think i need this
           toprated: [...state.toprated],
+          nowplaying: [...state.nowplaying],
           //............................
           movies: [...state.movies],
       };
     case "load":
-      return { movies: action.payload.movies, upcoming: [...state.upcoming], toprated: [...state.toprated] };
+      return { movies: action.payload.movies, upcoming: [...state.upcoming], toprated: [...state.toprated], nowplaying: [...state.nowplaying] };
     case "load-upcoming":
-      return { upcoming: action.payload.movies, movies: [...state.movies], toprated: [...state.toprated]};
+      return { upcoming: action.payload.movies, movies: [...state.movies], toprated: [...state.toprated], nowplaying: [...state.nowplaying]};
 
     case "load-toprated":
-      return{toprated: action.payload.movies, upcoming: [...state.upcoming], movies: [...state.movies]};
+      return{toprated: action.payload.movies, upcoming: [...state.upcoming], movies: [...state.movies], nowplaying: [...state.nowplaying]};
+
+    case "load-nowplaying":
+      return{nowplaying: action.payload.movies, upcoming: [...state.upcoming], movies: [...state.movies], toprated: [...state.toprated]};
 
     case "add-review":
       return {
@@ -44,7 +52,7 @@ const reducer = (state, action) => {
             : m
         ),
         //added toprated here 11/12
-        upcoming: [...state.upcoming], toprated: [...state.toprated],
+        upcoming: [...state.upcoming], toprated: [...state.toprated], nowplaying: [...state.nowplaying]
       };
     default:
       return state;
@@ -52,11 +60,11 @@ const reducer = (state, action) => {
 };
 
 const MoviesContextProvider = (props) => {
-  const [state, dispatch] = useReducer(reducer, { movies: [], upcoming: [], toprated: [] });
+  const [state, dispatch] = useReducer(reducer, { movies: [], upcoming: [], toprated: [], nowplaying: [], });
 
   const addToFavorites = (movieId) => {
     const index = state.movies.map((m) => m.id).indexOf(movieId);
-    dispatch({ type: "add-favorite", payload: { movie: state.movies[index], toprated: state.toprated[index] } });
+    dispatch({ type: "add-favorite", payload: { movie: state.movies[index], toprated: state.toprated[index], nowplaying: state.nowplaying[index] } });
   };
 
   const addToWatchList = (movieId) => {
@@ -90,6 +98,12 @@ const MoviesContextProvider = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    getNowPlaying().then((movies) => {
+      dispatch({ type: "load-nowplaying", payload: { movies } });
+    });
+  }, []);
+
   return (
     <MoviesContext.Provider
       value={{
@@ -100,6 +114,7 @@ const MoviesContextProvider = (props) => {
         addReview: addReview,
         //add toprated here?
         toprated: state.toprated,
+        nowplaying: state.nowplaying,
       }}
     >
       {props.children}

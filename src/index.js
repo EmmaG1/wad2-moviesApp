@@ -15,6 +15,7 @@ import AddMovieReviewPage from './pages/addMovieReviewPage';
 //added 6/12
 //import CreditsPage from './pages/creditsPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage'; 
+import NowPlayingMoviesPage from './pages/nowPlayingMoviesPage';
 
 //  <Route exact path="/credits/:id" component={movieCredits}/>
 
@@ -51,6 +52,7 @@ const App = () => {
           <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
          
           <Route exact path ="movies/toprated" component={TopRatedMoviesPage}/>
+          <Route exact path ="movies/nowplaying" component={NowPlayingMoviesPage}/>
 
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />
