@@ -11,7 +11,12 @@ import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
-//import CreditsPage from './pages/creditsPage; //added 6/12
+//import movieCredits from "./components/movieCredits";
+//added 6/12
+//import CreditsPage from './pages/creditsPage';
+import TopRatedMoviesPage from './pages/topRatedMoviesPage'; 
+
+//  <Route exact path="/credits/:id" component={movieCredits}/>
 
 const App = () => {
   return (
@@ -33,17 +38,20 @@ const App = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link " to="/movies/upcoming"> //this is the link you go to when you click 
+            <Link className="nav-link " to="/movies/upcoming">  
               Upcoming Movies
             </Link>
           </li>
         </ul>
         <Switch>
-          //these are where the links go to 
+          
           <Route exact path="/reviews/form" component={AddMovieReviewPage} />
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+         
+          <Route exact path ="movies/toprated" component={TopRatedMoviesPage}/>
+
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />

@@ -10,7 +10,7 @@ export default ({ movie }) => {
     getMovieReviews(movie.id).then(reviews => {
       setReviews(reviews);
     });
-  }, []);
+  }, ); //removed [] from before the );
   return (
     <table className="table table-striped table-bordered table-hover">
       <thead>
