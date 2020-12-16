@@ -19,7 +19,7 @@ export default ({ movie }) => {
         <li key="rdv" className="list-group-item ">
           {movie.release_date}
         </li>
-        
+
       </ul>
       <ul className="list-group list-group-horizontal">
         <li key="gh" className="list-group-item list-group-item-dark">

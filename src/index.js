@@ -18,7 +18,7 @@ import TopRatedMoviesPage from './pages/topRatedMoviesPage';
 import NowPlayingMoviesPage from './pages/nowPlayingMoviesPage';
 
 //  <Route exact path="/credits/:id" component={movieCredits}/>
-// <Route exact path ="movies/toprated" component={TopRatedMoviesPage}/>
+// 
 
 const App = () => {
   return (
@@ -46,14 +46,14 @@ const App = () => {
           </li>
         </ul>
         <Switch>
-          <Route exact path ="movies/nowplaying" component={NowPlayingMoviesPage}/>
+          <Route exact path ="/movies/nowplaying" component={NowPlayingMoviesPage}/>
           <Route exact path="/reviews/form" component={AddMovieReviewPage} />
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+          <Route exact path ="/movies/toprated" component={TopRatedMoviesPage}/>
          
-         
-          <Route path="/movies/:id" component={MoviePage} />
+          <Route exact path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
         </Switch>

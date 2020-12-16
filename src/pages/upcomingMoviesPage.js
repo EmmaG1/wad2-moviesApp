@@ -26,6 +26,9 @@ const MovieListPage = () => {
         title='Upcoming Movies'
         movies={movies} //passing the array list 
         buttonHandler={addToFavorites}
+        action={(movies) => {
+          // return <AddToFavoritesButton movie={toprated} /> 
+        }}
       />
   );
 };
