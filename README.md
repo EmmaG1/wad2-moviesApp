@@ -1,5 +1,11 @@
 # wad2-moviesApp
 MovieApp3
+New TMDB endpoints: 
+1. Top Rated
+2. Most Popular
+3. Now Playing
+
+New Pages: 
 1. Added code to add Credits page, app didn't load so I commented all the credits work out.
   -added the getCredits const in tmdb-api (commented out)
   -added a /componants/movieCredits/index.js for my credits page (commented out)
