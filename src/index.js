@@ -16,6 +16,7 @@ import AddMovieReviewPage from './pages/addMovieReviewPage';
 //import CreditsPage from './pages/creditsPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage'; 
 import NowPlayingMoviesPage from './pages/nowPlayingMoviesPage';
+import PopularMoviesPage from "./pages/popularMoviesPage";
 
 //  <Route exact path="/credits/:id" component={movieCredits}/>
 // 
@@ -52,7 +53,7 @@ const App = () => {
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
           <Route exact path ="/movies/toprated" component={TopRatedMoviesPage}/>
-         
+          <Route exact path="/movies/popularmovies" component={PopularMoviesPage}/>
           <Route exact path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />

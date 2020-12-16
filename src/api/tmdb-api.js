@@ -59,3 +59,10 @@ export const getMovies = () => {
     ).then(res => res.json())
     .then(json => json.results)
   };
+
+  export const getPopularMovies = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=1426f12d2f5a0a08718de4488213cec8&language=en-US&page=1`
+    ).then(res => res.json())
+    .then(json => json.results)
+  };

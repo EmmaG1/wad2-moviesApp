@@ -14,7 +14,7 @@ const TopRatedMoviesPage = () => {
   return (
     <MovieListPageTemplate
       movies={toprated}
-      title={"No. of top rated movies"}
+      title={"No. Top Rated Movies"}
       //action={movie => <AddReviewButton movie={movie} />}
       action={(toprated) => {
         // return <AddToFavoritesButton movie={toprated} /> 
