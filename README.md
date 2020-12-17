@@ -1,6 +1,6 @@
 # Assignment 1 - ReactJS app.
 
-Name: ... your name ...
+Name: Emma Grace
 
 ## Features.
 
