@@ -9,8 +9,6 @@ Name: Emma Grace
  + Feature 1 - A Top Rated Movies page
  + Feature 2 - A Now Playing Movies page
  + Feature 3 = A Popular Movies page
- + etc
- + etc
 
 ## Setup requirements (If required).
 
@@ -32,17 +30,20 @@ N/A
 
 ....... Insert a screenshot from the Storybook UI, hi-light stories relating to new/modified components you developed - see example screenshot below] .......
 
-![][stories]
+N/A
 
 ### UI Design.
 
 ...... Insert screenshots of the new/modified views you have added to the Movies Fan app. Include a caption for each one clearly stating its purpose and any user interaction it supports ........
 
 ![][topRatedMovies]
->Shows the Top rated movies starting with the highest rated.
+>Shows the top rated movies starting with the highest rated.
 
-![][review]
->Shows the full text for a movie review. 
+![][nowPlayingMovies]
+>Shows a list of now playing movies.
+
+![][popularMovies]
+>Shows a list of popular movies.
 
 ## Routing.
 
@@ -76,3 +77,5 @@ N/A
 [cardLink]: ./public/cardLink.png
 [stories]: ./public/storybook.png
 [topRatedMovies]: ./public/topRatedMovies.PNG
+[nowPlayingMovies]: ./public/nowPlayingMovies.PNG
+[popularMovies]: ./public/popularMovies.PNG
