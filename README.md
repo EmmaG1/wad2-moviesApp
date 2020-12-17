@@ -75,3 +75,4 @@ N/A
 [reviewLink]: ./public/reviewLink.png
 [cardLink]: ./public/cardLink.png
 [stories]: ./public/storybook.png
+[topRatedMovies]: ./public/topRatedMovies.png
