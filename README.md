@@ -49,20 +49,13 @@ N/A
 
 ...... Insert a list of the additional routes supported by your Movies Fan app. If relevant, specify which of the routes require authentication, i.e. protected/private.
 
-+ /movies/favorites (protected) - displays the user's favorite movies selection.
-+ /reviews/:id (public) - displays the full text of a movie review.
-+ etc.
-+ etc.
+N/A
 
 ### Data hyperlinking.
 
 .... Use screenshots to illustrate where data hyperlinking is present in your views - include captions.
 
-![][cardLink]
-> Clicking a card causes the display of that movie's details.
-
-![][reviewLink]
->Clicking the 'Full Review' for a review extract will display the full text of the review
+N/A
 
 ## Independent learning (If relevant).
 
