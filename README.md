@@ -6,9 +6,9 @@ Name: Emma Grace
 
 ...... A bullet-point list of the ADDITIONAL user features you have implemented for the  Movies Fan app ......,
  
- + Feature 1 - .... a statement of its purpose/objective ..... 
- + Feature 2 - .......
- + Feature 3 = ......
+ + Feature 1 - A Top Rated Movies page
+ + Feature 2 - A Now Playing Movies page
+ + Feature 3 = A Popular Movies page
  + etc
  + etc
 
@@ -16,13 +16,15 @@ Name: Emma Grace
 
 ...... A brief explanation of any non-standard setup steps necessary to run your app/client locally (after cloning the repo) ........
 
+N/A 
+
 ## API Data Model.
 
 ..... List the additional TMDB endpoints used in your assignment, e.g.
 
-+ https://api.themoviedb.org/3/movie/${id} - get detailed information on a specific movie. 
-+ https://api.themoviedb.org/3/genre/movie/list - get a list of movie genres
-+ .......
++ https://api.themoviedb.org/3/movie/now_playing - get a list of now playing movies
++ https://api.themoviedb.org/3/movie/popular - get a list of popular movies
++ https://api.themoviedb.org/3/movie/top_rated - get a list of top rated movies 
 
 ## App Design.
 
@@ -36,8 +38,8 @@ Name: Emma Grace
 
 ...... Insert screenshots of the new/modified views you have added to the Movies Fan app. Include a caption for each one clearly stating its purpose and any user interaction it supports ........
 
-![][movieDetail]
->Shows detailed information on a movie. Clicking the 'Show Reviews' button will display extracts from critic reviews.
+![][topRatedMovies]
+>Shows the Top rated movies starting with the highest rated.
 
 ![][review]
 >Shows the full text for a movie review. 
